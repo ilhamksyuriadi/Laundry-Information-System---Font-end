@@ -18,11 +18,15 @@ there are 3 user: customer, employee and manager
 -login path ('localhost:3000/login') will display the login page, you can login with:
 
 employee
+
 username : employee
+
 password : 123
 
 manager
+
 username : manager
+
 passowrd : 123
 
 *note:
