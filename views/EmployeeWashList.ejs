@@ -1,0 +1,160 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Seven Laundry</title>
+    <link rel="icon" href="/svn.png" />
+    <link rel="stylesheet" type="text/css" href="/Navbar.css" />
+    <link rel="stylesheet" type="text/css" href="/EmployeeWashList.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-body">
+      <div class="navbar">
+        <img class="navbar-img" src="/svn.png" />
+        <form
+          class="navbar-button-wrap"
+          method="POST"
+          action="/employee/washList/employeeNavbar"
+        >
+          <button class="navbar-button" name="button" value="main">
+            <i class="material-icons" style="font-size: 30px"> home </i> Home
+          </button>
+          <button class="navbar-button" name="button" value="request">
+            <i class="material-icons" style="font-size: 30px"> get_app </i>
+            Input
+          </button>
+          <button class="navbar-button" name="button" value="washList">
+            <i class="material-icons" style="font-size: 30px"> assignment </i>
+            Wash List
+          </button>
+          <button class="navbar-button" name="button" value="summary">
+            <i class="material-icons" style="font-size: 30px"> bookmarks </i>
+            Summary
+          </button>
+          <button class="navbar-button" name="button" value="logout">
+            <i class="material-icons" style="font-size: 30px">
+              power_settings_new
+            </i>
+            Logout
+          </button>
+        </form>
+      </div>
+      <div class="content">
+        <h1>Wash List</h1>
+        <div class="content-sub">
+          <div class="content-sub-1">
+            <h2>Wash List</h2>
+            <table class="table-header">
+              <tr>
+                <th class="table-header-cell">Name</th>
+                <th class="table-header-cell">Phone</th>
+                <th class="table-header-cell">Address</th>
+                <th class="table-header-cell-action">Action</th>
+              </tr>
+            </table>
+
+            <div class="scroll-box">
+              <table>
+                <% data.forEach((data)=>{%>
+                <form method="POST" action="/inputWashList">
+                  <tr>
+                    <% if (data.status == 2) {%>
+                    <td class="table-cell"><%= data.name %></td>
+                    <td class="table-cell"><%= data.phone %></td>
+                    <input type="hidden" name="phone" value=<%= data.phone %> />
+                    <td class="table-cell"><%= data.address %></td>
+                    <td class="table-cell-action">
+                      <button
+                        class="button-action button-action-style"
+                        type="submit"
+                        name="button"
+                        value="done"
+                      >
+                        Done
+                      </button>
+                    </td>
+                    <%}%>
+                  </tr>
+                </form>
+
+                <%})%>
+              </table>
+            </div>
+          </div>
+          <div class="content-sub-2">
+            <h2>Done List</h2>
+            <table class="table-header">
+              <tr>
+                <th class="table-header-cell">Name</th>
+                <th class="table-header-cell">Phone</th>
+                <th class="table-header-cell">Address</th>
+                <th class="table-header-cell-action">Action</th>
+              </tr>
+            </table>
+
+            <div class="scroll-box">
+              <table>
+                <% data.forEach((data)=>{%>
+                <form method="POST" action="/inputDeliver">
+                  <tr>
+                    <% if (data.status == 3 || data.status == 4) {%>
+                    <td class="table-cell"><%= data.name %></td>
+                    <td class="table-cell"><%= data.phone %></td>
+                    <input type="hidden" name="phone" value=<%= data.phone %> />
+                    <td class="table-cell"><%= data.address %></td>
+                    <td class="table-cell-action">
+                      <% if (data.delivery) {%> <% if (data.status == 3) {%>
+                      <button
+                        class="button-action button-action-style"
+                        type="submit"
+                        name="button"
+                        value="delivery"
+                      >
+                        Deliver
+                      </button>
+                      <%} else if (data.status == 4) {%>
+                      <button
+                        class="button-action button-action-pay"
+                        type="submit"
+                        name="button"
+                        value="pay"
+                      >
+                        Pay
+                      </button>
+                      <%}%> <%} else if (data.delivery == false) {%>
+                      <button
+                        class="button-action button-action-pay"
+                        type="submit"
+                        name="button"
+                        value="pay"
+                      >
+                        Pay
+                      </button>
+                      <%}%>
+                      <button
+                        class="button-action button-action-undo"
+                        type="submit"
+                        name="button"
+                        value="undo"
+                      >
+                        Undo
+                      </button>
+                    </td>
+                    <%}%>
+                  </tr>
+                </form>
+
+                <%})%>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

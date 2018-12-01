@@ -1,0 +1,120 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Seven Laundry</title>
+    <link rel="icon" href="/svn.png" />
+    <link rel="stylesheet" type="text/css" href="/Navbar.css" />
+    <link rel="stylesheet" type="text/css" href="/EmployeeSummary.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-body">
+      <div class="navbar">
+        <img class="navbar-img" src="/svn.png" />
+        <form
+          class="navbar-button-wrap"
+          method="POST"
+          action="/employee/summary/employeeNavbar"
+        >
+          <button class="navbar-button" name="button" value="main">
+            <i class="material-icons" style="font-size: 30px"> home </i> Home
+          </button>
+          <button class="navbar-button" name="button" value="request">
+            <i class="material-icons" style="font-size: 30px"> get_app </i>
+            Input
+          </button>
+          <button class="navbar-button" name="button" value="washList">
+            <i class="material-icons" style="font-size: 30px"> assignment </i>
+            Wash List
+          </button>
+          <button class="navbar-button" name="button" value="summary">
+            <i class="material-icons" style="font-size: 30px"> bookmarks </i>
+            Summary
+          </button>
+          <button class="navbar-button" name="button" value="logout">
+            <i class="material-icons" style="font-size: 30px">
+              power_settings_new
+            </i>
+            Logout
+          </button>
+        </form>
+      </div>
+      <div class="content">
+        <h1>Laundry Summary</h1>
+        <div class="content-sub">
+          <div class="content-sub-1">
+            <h2>Summary</h2>
+            <table>
+              <tr>
+                <td class="td-size-1">Waiting</td>
+                <td class="td-size-2"><%= waiting %></td>
+              </tr>
+              <tr>
+                <td class="td-size-1">Picking Up</td>
+                <td class="td-size-2"><%= pickingUp %></td>
+              </tr>
+              <tr>
+                <td class="td-size-1">Rejected</td>
+                <td class="td-size-2"><%= rejected %></td>
+              </tr>
+              <tr>
+                <td class="td-size-1">Washing</td>
+                <td class="td-size-2"><%= washing %></td>
+              </tr>
+              <tr>
+                <td class="td-size-1">Done</td>
+                <td class="td-size-2"><%= done %></td>
+              </tr>
+              <tr>
+                <td class="td-size-1">On Delivery</td>
+                <td class="td-size-2"><%= onDelivery %></td>
+              </tr>
+              <tr>
+                <td class="td-size-1">Finished</td>
+                <td class="td-size-2"><%= finished %></td>
+              </tr>
+              <tr>
+                <td class="td-size-1">On Proccess</td>
+                <td class="td-size-2"><%= onProgress %></td>
+              </tr>
+              <tr>
+                <td class="td-size-1">Total</td>
+                <td class="td-size-2"><%= total %></td>
+              </tr>
+              <tr>
+                <td class="td-size-1">Income(Rp)</td>
+                <td class="td-size-2"><%= income %></td>
+              </tr>
+            </table>
+          </div>
+          <div class="content-sub-2">
+            <h2>Action</h2>
+            <form method="POST" action="/deleteRejected">
+              <button
+                class="action-button"
+                type="submit"
+                name="button"
+                value="finish"
+              >
+                Submit Finished Laundry
+              </button>
+              <button
+                class="action-button"
+                type="submit"
+                name="button"
+                value="delete"
+              >
+                Delete Rejected Request
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

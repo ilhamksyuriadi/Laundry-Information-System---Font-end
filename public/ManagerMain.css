@@ -1,0 +1,13 @@
+.main-body {
+  display: flex;
+  flex-direction: row;
+}
+
+h1 {
+  color: rgb(94, 94, 94);
+}
+
+.content {
+  margin-left: 270px;
+  font-family: arial;
+}

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Seven Laundry</title>
+    <link rel="icon" href="svn.png" />
+    <link rel="stylesheet" type="text/css" href="form.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="body">
+      <div id="header">
+        <img id="header-image" src="svn.png" />
+        <form id="header-button" method="POST" action="/navbar">
+          <button
+            type="submit"
+            onmouseover="HeaderButtonHover(this)"
+            onmouseout="HeaderButtonOut(this)"
+            class="all-header-button"
+            name="name"
+            value="aboutUs"
+          >
+            About Us
+          </button>
+          <button
+            type="submit"
+            onmouseover="HeaderButtonHover(this)"
+            onmouseout="HeaderButtonOut(this)"
+            class="all-header-button"
+            name="name"
+            value="status"
+          >
+            Status
+          </button>
+          <button
+            type="name"
+            onmouseover="HeaderButtonHover(this)"
+            onmouseout="HeaderButtonOut(this)"
+            class="all-header-button"
+            name="name"
+            value="laundryNow"
+          >
+            Laundry Now !
+          </button>
+        </form>
+      </div>
+      <div id="body-2">
+        <div id="form-laundry">
+          <h2 id="form-header">Get our service now !</h2>
+          <form id="form" method="POST" action="/form/add">
+            <label class="all-label">Name</label>
+            <input class="all-form" name="name" type="text" />
+            <label class="all-label">Phone</label>
+            <input class="all-form" name="phone" type="text" />
+            <label class="all-label">Address</label>
+            <input class="all-form" name="address" type="text" />
+            <label class="all-label">Delivery</label>
+            <div class="radio-wrapper">
+              <div class="radio">
+                <input
+                  class="radio-button"
+                  type="radio"
+                  name="delivery"
+                  value="yes"
+                />
+                <label class="radio-label">Yes</label>
+              </div>
+              <div class="radio">
+                <input
+                  class="radio-button"
+                  type="radio"
+                  name="delivery"
+                  value="no"
+                />
+                <label class="radio-label">No</label>
+              </div>
+            </div>
+            <input
+              onmouseover="SubmitButtonHover(this)"
+              onmouseout="SubmitButtonOut(this)"
+              id="form-button"
+              type="submit"
+            />
+          </form>
+        </div>
+        <div id="contact">
+          <h2>Contact Us</h2>
+          <div>
+            <p>
+              <i class="material-icons" style="font-size: 18px"
+                >perm_phone_msg
+              </i>
+              0825-2321-35xx
+            </p>
+            <p>
+              <i class="material-icons" style="font-size: 18px"> email </i>
+              seven.laundry@email.com
+            </p>
+            <p>
+              <i class="material-icons" style="font-size: 18px">
+                location_on
+              </i>
+              Sukabirus No.xx Dayeuhkolot
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./domform.js"></script>
+  </body>
+</html>

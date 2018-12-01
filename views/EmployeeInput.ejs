@@ -1,0 +1,240 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Seven Laundry</title>
+    <link rel="icon" href="/svn.png" />
+    <link rel="stylesheet" type="text/css" href="/Navbar.css" />
+    <link rel="stylesheet" type="text/css" href="/EmployeeInput.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-body">
+      <div class="navbar">
+        <img class="navbar-img" src="/svn.png" />
+        <form
+          class="navbar-button-wrap"
+          method="POST"
+          action="/employee/input/employeeNavbar"
+        >
+          <button class="navbar-button" name="button" value="main">
+            <i class="material-icons" style="font-size: 30px"> home </i> Home
+          </button>
+          <button class="navbar-button" name="button" value="request">
+            <i class="material-icons" style="font-size: 30px"> get_app </i>
+            Input
+          </button>
+          <button class="navbar-button" name="button" value="washList">
+            <i class="material-icons" style="font-size: 30px"> assignment </i>
+            Wash List
+          </button>
+          <button class="navbar-button" name="button" value="summary">
+            <i class="material-icons" style="font-size: 30px"> bookmarks </i>
+            Summary
+          </button>
+          <button class="navbar-button" name="button" value="logout">
+            <i class="material-icons" style="font-size: 30px">
+              power_settings_new
+            </i>
+            Logout
+          </button>
+        </form>
+      </div>
+      <div class="content">
+        <h1 class="test">Input Data</h1>
+        <div class="content-sub">
+          <div class="content-sub-1">
+            <h2>Input Data Laundry</h2>
+            <% if (temp) {%>
+            <form
+              class="content-sub-1-form"
+              method="POST"
+              action="/inputRequest"
+            >
+              <label>Name</label>
+              <input type="text" name="name" value="<%= temp.name %>" />
+              <label>Phone</label>
+              <input type="text" name="phone" value="<%= temp.phone %>" />
+              <label>Address</label>
+              <input type="text" name="address" value="<%= temp.address %>" />
+              <label>Weight</label>
+              <input type="text" name="weight" value="" />
+              <label class="disable">Delivery</label>
+              <div>
+                <input type="radio" disabled /><label class="disable"
+                  >Yes</label
+                >
+              </div>
+              <div>
+                <input type="radio" disabled /><label class="disable">No</label>
+              </div>
+              <button class="button-input" type="submit">Submit</button>
+            </form>
+            <%} else{%>
+            <form
+              class="content-sub-1-form"
+              method="POST"
+              action="/inputRequest"
+            >
+              <label>Name</label> <input type="text" name="name" value="" />
+              <label>Phone</label> <input type="text" name="phone" value="" />
+              <label>Address</label>
+              <input type="text" name="address" value="" />
+              <label>Weight</label>
+              <input type="text" name="weight" value="" />
+              <label>Delivery</label>
+              <div>
+                <input type="radio" name="delivery" value="yes" /><label
+                  >Yes</label
+                >
+              </div>
+              <div>
+                <input type="radio" name="delivery" value="no" /><label
+                  >No</label
+                >
+              </div>
+              <button class="button-input" type="submit">Submit</button>
+            </form>
+            <%}%>
+          </div>
+          <div class="content-sub-2">
+            <h2>Delivery Request List</h2>
+            <table class="request-table-header">
+              <tr>
+                <th class="request-table-header-cell">Name</th>
+                <th class="request-table-header-cell">Phone</th>
+                <th class="request-table-header-cell">Address</th>
+                <th class="request-table-header-cell">Status</th>
+                <th class="request-table-header-cell-action">Action</th>
+              </tr>
+            </table>
+
+            <div class="scroll-box">
+              <table>
+                <% data.forEach((data)=>{ %>
+                <form method="POST" action="/tableRequest">
+                  <% if (data.status < 2) {%>
+                  <tr>
+                    <td class="request-cell"><%= data.name %></td>
+                    <input type="hidden" name="name" value=<%= data.name %> />
+                    <td class="request-cell"><%= data.phone %></td>
+                    <input type="hidden" name="phone" value=<%= data.phone %> />
+                    <td class="request-cell"><%= data.address %></td>
+                    <input type="hidden" name="address" value=<%= data.address
+                    %> /> <%if(data.status == 0) {%>
+                    <td class="request-cell">Waiting</td>
+                    <%}else if (data.status == 1) {%>
+                    <td class="request-cell">Picking Up</td>
+                    <%}else if (data.status == -1) {%>
+                    <td class="request-cell">Rejected</td>
+                    <%}%>
+                    <td class="request-cell-action">
+                      <% if (data.status == 1) {%>
+                      <button
+                        class="button-action-disable"
+                        type="submit"
+                        name="button"
+                        value="take"
+                        disabled
+                      >
+                        Take
+                      </button>
+                      <%} else {%>
+                      <button
+                        class="button-action button-action-take"
+                        type="submit"
+                        name="button"
+                        value="take"
+                      >
+                        Take
+                      </button>
+                      <%}%>
+
+                      <button
+                        class="button-action button-action-add"
+                        type="submit"
+                        name="button"
+                        value="add"
+                      >
+                        Add
+                      </button>
+                      <% if (data.status == -1) {%>
+                      <button
+                        class="button-action-disable "
+                        type="submit"
+                        name="button"
+                        value="reject"
+                        disabled
+                      >
+                        Reject
+                      </button>
+                      <%} else {%>
+                      <button
+                        class="button-action button-action-reject"
+                        type="submit"
+                        name="button"
+                        value="reject"
+                      >
+                        Reject
+                      </button>
+                      <%}%>
+
+                      <button
+                        class="button-action button-action-undo"
+                        type="submit"
+                        name="button"
+                        value="undo"
+                      >
+                        Undo
+                      </button>
+                    </td>
+                  </tr>
+                  <%}%>
+                </form>
+
+                <% }) %>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      console.log("<%= temp %>");
+      // Load data from app.js
+      /* let data = [];
+       let newData = {};
+       ("<% data.forEach((data)=>{ %>");
+       newData = {
+         name: "<%= data.name %>",
+         phone: "<%= data.phone %>",
+         address: "<%= data.address %>",
+         status: "<%= data.status %>"
+       };
+       data.push(newData);
+       ("<% }) %>");
+
+       // Put data and button into the table
+       let buttonInput = document.createElement("button");
+       let buttonReject = document.createElement("button");
+       buttonInput.innerHTML = "Submit";
+       buttonReject.innerHTML = "Reject";
+
+       let table = document.getElementById("request-table");
+       for (let i = 0; i < data.length; i++) {
+         tableRow = table.insertRow(i + 1);
+         tableRow.insertCell(0).innerHTML = data[i].name;
+         tableRow.insertCell(1).innerHTML = data[i].phone;
+         tableRow.insertCell(2).innerHTML = data[i].address;
+         if (data[i].status == 0) {
+           tableRow.insertCell(3).innerHTML = "Picking Up";
+         }
+         (tableRow.insertCell(4).innerHTML = ;
+       }*/
+    </script>
+  </body>
+</html>

@@ -1,0 +1,107 @@
+.main-body {
+  display: flex;
+  flex-direction: row;
+}
+
+h2 {
+  border-bottom: 3px solid #039be5;
+  color: rgb(94, 94, 94);
+}
+
+h1 {
+  color: rgb(94, 94, 94);
+}
+
+.content {
+  margin-left: 270px;
+  margin-right: 20px;
+  font-family: arial;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-sub {
+  display: flex;
+  height: 520px;
+}
+.content-sub-1 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 850px;
+  margin-left: 80px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px 0px grey;
+}
+
+.report-bot {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn-to-excel {
+  width: 300px;
+  margin-top: 15px;
+  font-size: 25px;
+  background-color: #017cb9;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn-to-excel:hover {
+  width: 300px;
+  margin-top: 15px;
+  font-size: 25px;
+  background-color: #00aaff;
+  border: none;
+  border-radius: 15px;
+  color: white;
+  cursor: pointer;
+}
+
+.table-header {
+  background-color: #017cb9;
+  font-family: sans-serif;
+  color: white;
+  border-radius: 3px;
+  font-weight: 1000;
+  text-align: left;
+}
+
+.table-header-cell {
+  width: 20%;
+  height: 35px;
+  text-align: center;
+}
+
+.scroll-box {
+  background-color: white;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  border: 1px solid #039be5;
+}
+
+.table-cell {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 20%;
+  height: 33px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(71, 71, 71);
+}
+
+.table-report {
+  width: 250px;
+  margin-top: 15px;
+}
+
+.cell-report {
+  height: 35px;
+}

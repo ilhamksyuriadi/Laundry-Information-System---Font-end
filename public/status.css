@@ -1,0 +1,117 @@
+.scroll-box {
+  background-color: white;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 300px;
+  border: 1px solid #039be5;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.status-table-header {
+  background-color: #039be5;
+  font-family: sans-serif;
+  color: white;
+  border-radius: 3px;
+  font-weight: 1000;
+  text-align: left;
+}
+
+.status-table-header-cell {
+  width: 20%;
+  height: 35px;
+  text-align: center;
+}
+
+.status-table {
+}
+
+.status-cell {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 20%;
+  height: 33px;
+  padding-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(71, 71, 71);
+}
+
+.status-cell-waiting {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 20%;
+  height: 33px;
+  padding-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(180, 180, 180);
+  font-weight: bold;
+}
+
+.status-cell-picking-up {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 20%;
+  height: 33px;
+  padding-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(173, 92, 0);
+  font-weight: bold;
+}
+
+.status-cell-rejected {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 20%;
+  height: 33px;
+  padding-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(255, 0, 0);
+  font-weight: bold;
+}
+
+.status-cell-now-washing {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 20%;
+  height: 33px;
+  padding-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 201, 252);
+  font-weight: bold;
+}
+
+.status-cell-done {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 20%;
+  height: 33px;
+  padding-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 167, 0);
+  font-weight: bold;
+}
+
+.status-cell-delivery {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 20%;
+  height: 33px;
+  padding-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(4, 0, 252);
+  font-weight: bold;
+}
+
+.status-cell-finished {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 20%;
+  height: 33px;
+  padding-left: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(0, 69, 133);
+  font-weight: bold;
+}

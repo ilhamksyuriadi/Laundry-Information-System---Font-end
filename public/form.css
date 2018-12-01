@@ -1,0 +1,19 @@
+.radio-wrapper {
+  display: flex;
+  flex-direction: row;
+  padding-top: 5px;
+}
+
+.radio {
+  margin-right: 30px;
+}
+
+.radio-label {
+  font-family: arial;
+  font-size: 15px;
+  color: rgb(146, 146, 146);
+  font-weight: bold;
+}
+
+.radio-button:hover {
+}

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Seven Laundry</title>
+    <link rel="icon" href="svn.png" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="/status.css" />
+  </head>
+  <body>
+    <div id="body">
+      <div id="header">
+        <img id="header-image" src="svn.png" />
+        <form id="header-button" method="POST" action="/navbar">
+          <button
+            type="submit"
+            onmouseover="HeaderButtonHover(this)"
+            onmouseout="HeaderButtonOut(this)"
+            class="all-header-button"
+            name="name"
+            value="aboutUs"
+          >
+            About Us
+          </button>
+          <button
+            type="submit"
+            onmouseover="HeaderButtonHover(this)"
+            onmouseout="HeaderButtonOut(this)"
+            class="all-header-button"
+            name="name"
+            value="status"
+          >
+            Status
+          </button>
+          <button
+            type="name"
+            onmouseover="HeaderButtonHover(this)"
+            onmouseout="HeaderButtonOut(this)"
+            class="all-header-button"
+            name="name"
+            value="laundryNow"
+          >
+            Laundry Now !
+          </button>
+        </form>
+      </div>
+      <div id="body-2">
+        <div id="status">
+          <h3 id="status-header">Laundry status</h3>
+          <table class="status-table-header">
+            <tr>
+              <th class="status-table-header-cell">Name</th>
+              <th class="status-table-header-cell">Phone</th>
+              <th class="status-table-header-cell">Address</th>
+              <th class="status-table-header-cell">Status</th>
+              <th class="status-table-header-cell">Price</th>
+            </tr>
+          </table>
+
+          <div class="scroll-box">
+            <table class="status-table">
+              <% data.forEach((data)=>{ %>
+              <tr>
+                <td class="status-cell"><%= data.name %></td>
+                <td class="status-cell"><%= data.phone %></td>
+                <td class="status-cell"><%= data.address %></td>
+                <% if (data.status == 0) { %>
+                <td class="status-cell-waiting">Waiting list</td>
+                <%}else if (data.status == 1) {%>
+                <td class="status-cell-picking-up">Picking up</td>
+                <%}else if (data.status == -1) {%>
+                <td class="status-cell-rejected">Sorry we're full</td>
+                <%}else if (data.status == 2) {%>
+                <td class="status-cell-now-washing">Now washing</td>
+                <%}else if (data.status == 3) {%>
+                <td class="status-cell-done">Done</td>
+                <%}else if (data.status == 4) {%>
+                <td class="status-cell-delivery">On delivery</td>
+                <%}else {%>
+                <td class="status-cell-finished">Finished</td>
+                <%}%> <% if (data.status >= 2) {%>
+                <td class="status-cell">Rp <%= data.price %></td>
+                <%}else{%>
+                <td class="status-cell">-</td>
+                <%}%>
+              </tr>
+              <% }) %>
+            </table>
+          </div>
+        </div>
+        <div id="contact">
+          <h2>Contact Us</h2>
+          <div>
+            <p>
+              <i class="material-icons" style="font-size: 18px"
+                >perm_phone_msg
+              </i>
+              0825-2321-35xx
+            </p>
+            <p>
+              <i class="material-icons" style="font-size: 18px"> email </i>
+              seven.laundry@email.com
+            </p>
+            <p>
+              <i class="material-icons" style="font-size: 18px">
+                location_on
+              </i>
+              Sukabirus No.xx Dayeuhkolot
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./domstatus.js"></script>
+    <script>
+      // Load data from app.js
+      /*let data = [];
+      let newData = {};
+      ("<% data.forEach((data)=>{ %>");
+      newData = {
+        name: "<%= data.name %>",
+        phone: "<%= data.phone %>",
+        address: "<%= data.address %>",
+        status: "<%= data.status %>"
+      };
+      data.push(newData);
+      ("<% }) %>");
+
+      // Put data into the table
+      let table = document.getElementById("status-table");
+      for (let i = 0; i < data.length; i++) {
+        tableRow = table.insertRow(i + 1);
+        tableRow.insertCell(0).innerHTML = data[i].name;
+        tableRow.insertCell(1).innerHTML = data[i].phone;
+        tableRow.insertCell(2).innerHTML = data[i].address;
+        if (data[i].status == 0) {
+          tableRow.insertCell(3).innerHTML = "Picking Up";
+        }
+      }
+      console.log(allData.length);*/
+    </script>
+  </body>
+</html>

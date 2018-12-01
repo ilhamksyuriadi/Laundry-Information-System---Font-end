@@ -1,0 +1,93 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Seven Laundry</title>
+    <link rel="icon" href="/svn.png" />
+    <link rel="stylesheet" type="text/css" href="/Navbar.css" />
+    <link rel="stylesheet" type="text/css" href="/ManagerReport.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main-body">
+      <div class="navbar">
+        <img class="navbar-img" src="/svn.png" />
+        <form
+          class="navbar-button-wrap"
+          method="POST"
+          action="/manager/report/managerNavbar"
+        >
+          <button class="navbar-button" name="button" value="main">
+            <i class="material-icons" style="font-size: 30px"> home </i> Home
+          </button>
+          <button class="navbar-button" name="button" value="addAccount">
+            <i class="material-icons" style="font-size: 30px">
+              account_circle
+            </i>
+            Add Account
+          </button>
+          <button class="navbar-button" name="button" value="report">
+            <i class="material-icons" style="font-size: 30px"> assessment </i>
+            Report
+          </button>
+          <button class="navbar-button" name="button" value="logout">
+            <i class="material-icons" style="font-size: 30px">
+              power_settings_new
+            </i>
+            Logout
+          </button>
+        </form>
+      </div>
+      <div class="content">
+        <h1>Laundry's Report</h1>
+        <div class="content-sub">
+          <div class="content-sub-1">
+            <h2>Report</h2>
+            <table class="table-header">
+              <tr>
+                <th class="table-header-cell">Name</th>
+                <th class="table-header-cell">Phone</th>
+                <th class="table-header-cell">Address</th>
+                <th class="table-header-cell">Weight</th>
+                <th class="table-header-cell">Price</th>
+              </tr>
+            </table>
+
+            <div class="scroll-box">
+              <% data.forEach((data)=>{%> <% if (data.status == 6) {%>
+              <table>
+                <tr>
+                  <td class="table-cell"><%= data.name %></td>
+                  <td class="table-cell"><%= data.phone %></td>
+                  <td class="table-cell"><%= data.address %></td>
+                  <td class="table-cell"><%= data.weight %></td>
+                  <td class="table-cell"><%= data.price %></td>
+                </tr>
+              </table>
+
+              <%}%> <%})%>
+            </div>
+            <div class="report-bot">
+              <table class="table-report">
+                <tr>
+                  <td class="cell-report">Total Customer</td>
+                  <td class="cell-report"><%= total %></td>
+                </tr>
+                <tr>
+                  <td class="cell-report">Total Income</td>
+                  <td class="cell-report"><%= income %></td>
+                </tr>
+              </table>
+
+              <button class="btn-to-excel">Print To Excel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

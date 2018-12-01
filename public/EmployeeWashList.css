@@ -1,0 +1,143 @@
+.main-body {
+  display: flex;
+  flex-direction: row;
+}
+
+h2 {
+  border-bottom: 3px solid #039be5;
+  color: rgb(94, 94, 94);
+}
+
+h1 {
+  color: rgb(94, 94, 94);
+}
+
+.content {
+  margin-left: 270px;
+  margin-right: 20px;
+  font-family: arial;
+  display: flex;
+  flex-direction: column;
+}
+
+.content-sub {
+  display: flex;
+  height: 500px;
+}
+
+.content-sub-1 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 495px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px 0px grey;
+}
+
+.content-sub-2 {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 495px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 8px 0px grey;
+  margin-left: 25px;
+}
+
+.table-header {
+  background-color: #017cb9;
+  font-family: sans-serif;
+  color: white;
+  border-radius: 3px;
+  font-weight: 1000;
+  text-align: left;
+}
+
+.table-header-cell {
+  width: 22%;
+  height: 35px;
+  text-align: center;
+}
+
+.table-header-cell-action {
+  width: 34%;
+  height: 35px;
+  text-align: center;
+}
+
+.scroll-box {
+  background-color: white;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  height: 350px;
+  border: 1px solid #039be5;
+}
+
+.table-cell {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 22%;
+  height: 33px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(71, 71, 71);
+}
+
+.table-cell-action {
+  border-right: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  width: 34%;
+  height: 33px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(71, 71, 71);
+}
+
+.button-action {
+  width: 60px;
+  height: 60px;
+  margin-top: 3px;
+  margin-bottom: 3px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.button-action-style {
+  background-color: #017cb9;
+  color: white;
+}
+
+.button-action-style:hover {
+  background-color: #00aaff;
+  color: white;
+}
+
+.button-action-undo {
+  background-color: rgb(131, 1, 1);
+  color: white;
+}
+
+.button-action-undo:hover {
+  background-color: red;
+  color: white;
+}
+
+.button-action-pay {
+  background-color: rgb(0, 182, 15);
+  color: white;
+}
+
+.button-action-pay:hover {
+  background-color: rgb(0, 255, 42);
+  color: white;
+}
