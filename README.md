@@ -1,16 +1,21 @@
 # Laundry-Information-System---Font-end
 -A front-end example with plain html and javascript
+
 -Use express js for routing
 
 # Quick start
 -clone this repository
+
 -open terminal on the same path of clone and write then enter: npm install
+
 -still on the same terminal, write then enter: nodemon
 
 there are 3 user: customer, employee and manager
+
 -default path ('localhost:3000/') will display the customer page
 
 -login path ('localhost:3000/login') will display the login page, you can login with:
+
 employee
 username : employee
 password : 123
