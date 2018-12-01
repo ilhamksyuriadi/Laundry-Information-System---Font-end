@@ -6,9 +6,10 @@
 # Quick start
 -clone this repository
 
--open terminal on the same path of clone and write then enter: npm install
+-open terminal on the same path with clone and write then enter: npm install
 
 -still on the same terminal, write then enter: nodemon
+
 
 there are 3 user: customer, employee and manager
 
