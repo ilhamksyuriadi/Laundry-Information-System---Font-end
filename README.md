@@ -1,6 +1,6 @@
 # Laundry-Information-System---Font-end
-A front-end example with plain html and javascript
-Use express js for routing
+-A front-end example with plain html and javascript
+-Use express js for routing
 
 # Quick start
 -clone this repository
