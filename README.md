@@ -27,7 +27,7 @@ manager
 
 username : manager
 
-passowrd : 123
+password : 123
 
 *note:
 1. in case your port 3000 already in use, just change the app.listen(3000, .... ) on app.js
