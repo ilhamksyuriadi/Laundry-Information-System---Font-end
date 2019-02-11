@@ -3,7 +3,7 @@
 
 -Use express js for routing
 
--No serve configuration. The data just passed on the code
+-No database. The data just passed on the code
 # Quick start
 -clone this repository
 
