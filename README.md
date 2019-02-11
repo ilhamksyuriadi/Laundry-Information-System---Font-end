@@ -32,5 +32,5 @@ password : 123
 
 *note:
 1. in case your port 3000 already in use, just change the app.listen(3000, .... ) on app.js
-change the 3000 to any available port on your pc/laptop.
+change the "3000" on parameter to any available port on your pc/laptop.
 2. this example have no error handling(e.g: express-validator), make sure the inputs are correct
