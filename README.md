@@ -1,4 +1,4 @@
-# Laundry-Information-System---Font-end
+# Laundry Information System - Font-end
 -A front-end example with plain html and javascript
 
 -Use express js for routing
