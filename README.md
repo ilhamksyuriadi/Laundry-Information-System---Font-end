@@ -3,6 +3,7 @@
 
 -Use express js for routing
 
+-No back end. The data just passed on the code
 # Quick start
 -clone this repository
 
