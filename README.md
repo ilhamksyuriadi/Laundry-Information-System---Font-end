@@ -1,5 +1,5 @@
 # Laundry Information System - Font-end
--A front-end example with plain html and javascript
+-A front-end example with plain html, css and javascript
 
 -Use express js for routing
 
